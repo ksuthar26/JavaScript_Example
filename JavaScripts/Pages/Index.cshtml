@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div id="demo">
+        <h4> Enter Either Value as Zero (0)</h4>
+        Value 1: <input type="text" id="t1" /> <br>
+        Value 2: <input type="text" id="t2" /> <br>
+        Answer: <input type="button" id="b1" value="Hit me" onclick="pp()"> <br>
+    </div>
+    <br />
+    <br />
+    <div id="errorMessage"></div>
+    <br />
+    <br />
+    <div id="message"></div>
+</div>
+
+@section Scripts  {
+    <script>
+        function pp() {
+            var c = parseInt(document.all.t1.value)
+            var d = parseInt(document.all.t2.value)
+            var e = 0
+            try {
+                if (d == 0) {
+                    throw "Divisor is Zero"
+                }
+                if (c == 0) {
+                    throw "To be divided is Zero"
+                }
+            }
+            catch (error) {
+                alert(error)
+            }
+        }
+    </script>
+}
